@@ -58,13 +58,33 @@ targets:
     entitlements:
       path: Widget/Widget.entitlements
 
+  ScreenshotTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: Tests
+        type: group
+    dependencies:
+      - target: PARADOX
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.ggsheng.PARADOX.screenshot
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        TEST_TARGET_NAME: PARADOX
+
 schemes:
   PARADOX:
     build:
       targets:
         PARADOX: all
         PARADOXWidgetExtension: all
+        ScreenshotTests: test
     run:
       config: Debug
+    test:
+      config: Debug
+      targets:
+        - ScreenshotTests
     archive:
       config: Release

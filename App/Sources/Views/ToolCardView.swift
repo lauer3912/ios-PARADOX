@@ -131,7 +131,7 @@ class ToolCardView: UIView {
                 preferredStyle: .alert
             )
             alert.addAction(UIAlertAction(title: "OK", style: .default))
-            if letvc = findViewController() {
+            if let vc = findViewController() {
                 vc.present(alert, animated: true)
             }
         }

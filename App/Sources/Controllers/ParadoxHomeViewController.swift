@@ -90,9 +90,6 @@ class ParadoxHomeViewController: UIViewController {
         ])
         
         let columns = 2
-        var currentRow = 0
-        var currentCol = 0
-        var cellViews: [UIView] = []
         
         for (index, tool) in tools.enumerated() {
             let card = ToolCardView(tool: tool)

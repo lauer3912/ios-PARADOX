@@ -147,11 +147,4 @@ class ToolCardView: UIView {
         }
         return nil
     }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        if let gradientLayer = layer.sublayers?.first as? CAGradientLayer {
-            gradientLayer.frame = bounds
-        }
-    }
 }

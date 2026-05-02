@@ -54,7 +54,7 @@ struct Provider: TimelineProvider {
 }
 
 struct PARADOXWidgetEntryView: View {
-    var entry: Provider.Entry
+    var entry: PARADOXWidgetEntry
 
     var body: some View {
         ZStack {
@@ -98,7 +98,7 @@ struct PARADOXWidget: Widget {
     let kind: String = "PARADOXWidget"
 
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: Provider) { entry in
+        StaticConfiguration(kind: kind, provider: Provider()) { entry in
             PARADOXWidgetEntryView(entry: entry)
         }
     }
